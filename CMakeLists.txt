@@ -3,4 +3,5 @@ project(NONE)
 
 target_sources(app PRIVATE
     src/main
+    src/status
 )
