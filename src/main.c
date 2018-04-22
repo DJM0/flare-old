@@ -5,6 +5,10 @@
 #include "status.h"
 #endif
 
+#if defined(CONFIG_FLARE_BLE_GATT)
+#include "ble/gatt/gatt.h"
+#endif
+
 void main(void)
 {
 
@@ -12,6 +16,10 @@ void main(void)
 
     #if defined(CONFIG_FLARE_STATUS)
     status_init();
+    #endif
+
+    #if defined(CONFIG_FLARE_BLE_GATT)
+    ble_gatt_init();
     #endif
 
 }

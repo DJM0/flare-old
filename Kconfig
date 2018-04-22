@@ -10,3 +10,8 @@ config FLARE_STATUS
 	bool
 	prompt "Enable flashing status LEDs"
 	default n
+
+config FLARE_BLE_GATT
+	bool
+	prompt "Enable GATT services and characteristics"
+	default n
