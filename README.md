@@ -2,7 +2,50 @@
 
 **Under development - doesn't really do anything yet**
 
-Currently using the [nRF51422](https://www.nordicsemi.com/eng/Products/ANT/nRF51422) SoC (32-bit Cortex M0, 256kB/128kB embedded flash, 32kB/16kB RAM). Development is being done on a [nRF51 Development Kit (pca10028)](https://www.nordicsemi.com/eng/Products/nRF51-DK).
+Wireless lighting platform for various hardware and creative applications.
+
+Designed around Nordic's [nRF52](https://www.nordicsemi.com/eng/Products/nRF52-Series-SoC) SoC (ARM Cortex M4, Bluetooth 5, 512kB Flash, 64kB RAM), but will also work on the [nRF51](https://www.nordicsemi.com/eng/Products/nRF51-Series-SoC) series or other Zephyr [supported boards](http://docs.zephyrproject.org/boards/boards.html) (depending on which Flare features are enabled).
+
+## Roadmap
+
+- [x] Configurable for multiple hardware platforms
+- [ ] LED Drivers
+    - [ ] PWM
+    - [ ] TI I²C driver IC
+    - [ ] WS2812, APA102 (maybe)
+    - [ ] Dummy (development)
+- [ ] Control via Bluetooth Low Energy GATT
+- [ ] iOS ANCS support
+- [ ] [Bluetooth Mesh](https://www.bluetooth.com/specifications/mesh-specifications)
+- [ ] Effects generator
+- [ ] Pre-generated effect support
+- [ ] Start-up memory mode
+- [ ] iOS/Android app
+- [ ] BLE beacon / presence awareness
+- [ ] Battery management system
+- [ ] Sensor support (light, temperature, motion)
+- [ ] Raspberry Pi / IP gateway
+- [ ] DMX interface
+- [ ] Docker build environment
+
+## Hardware & Applications
+
+### Development kits
+
+- nRF52
+    - [PCA10040](http://docs.zephyrproject.org/boards/arm/nrf52_pca10040/doc/nrf52_pca10040.html)
+- nRF51
+    - [PCA10028](http://docs.zephyrproject.org/boards/arm/nrf51_pca10028/doc/nrf51_pca10028.html)
+    - [BLE400](http://docs.zephyrproject.org/boards/arm/nrf51_ble400/doc/nrf51_ble400.html)
+    - [micro:bit](http://docs.zephyrproject.org/boards/arm/bbc_microbit/doc/board.html)
+
+### Lamp Jar
+
+*Hardware in [development](https://www.instagram.com/lightlabs/).*
+
+### Status Lamp
+
+*Not in development yet.*
 
 ## Development setup
 
@@ -30,7 +73,7 @@ ninja -C build
 ninja -C build flash
 ```
 
-### View logs
+### View logs (nRF5 DK)
 
 This requires the [J-Link Software Pack](https://www.segger.com/downloads/jlink/).
 
