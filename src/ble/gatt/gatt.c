@@ -4,12 +4,16 @@
 
 #include "gatt.h"
 #include "dis.h"
+#include "lcs.h"
 
 #define DEVICE_NAME_LEN	(sizeof(CONFIG_BT_DEVICE_NAME) - 1)
 
 static const struct bt_data ad[] = {
     BT_DATA_BYTES(BT_DATA_FLAGS, (BT_LE_AD_GENERAL | BT_LE_AD_NO_BREDR)),
     BT_DATA_BYTES(BT_DATA_UUID16_ALL, 0x0A, 0x18), // Device Information
+    BT_DATA_BYTES(BT_DATA_UUID128_ALL,
+        0x00, 0x22, 0x6E, 0x82, 0x09, 0xA3, 0xED, 0xAD,
+        0x87, 0x4C, 0xB8, 0x93, 0x2C, 0xA0, 0x34, 0x80), // Light Control Service
 };
 
 static const struct bt_data sd[] = {
@@ -50,6 +54,8 @@ void ble_gatt_init(void)
     }
 
     dis_init();
+
+    lcs_init();
 
     bt_conn_cb_register(&conn_callbacks);
 

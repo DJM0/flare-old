@@ -8,6 +8,7 @@ target_sources(app PRIVATE
     src/status
     src/ble/gatt/gatt
     src/ble/gatt/dis
+    src/ble/gatt/lcs
 )
 
 # Get the current working branch
